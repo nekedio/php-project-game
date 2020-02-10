@@ -1,0 +1,11 @@
+{
+    "name": "nekedio/php-project-lvl1",
+    "description": "Project Brain Games",
+    "authors": [
+        {
+            "name": "Nikita Ionov",
+            "email": "ionov.goo@gmail.com"
+        }
+    ],
+    "require": {}
+}
