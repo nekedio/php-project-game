@@ -1,6 +1,7 @@
 {
     "name": "nekedio/php-project-lvl1",
     "description": "Project Brain Games",
+    "bin": ["bin/brain-games"],
     "authors": [
         {
             "name": "Nikita Ionov",
