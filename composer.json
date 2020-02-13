@@ -2,11 +2,16 @@
     "name": "nekedio/php-project-lvl1",
     "description": "Project Brain Games",
     "bin": ["bin/brain-games"],
+    "autoload": {
+        "files":["src/Cli.php"]
+    },
     "authors": [
         {
             "name": "Nikita Ionov",
             "email": "ionov.goo@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.11"
+    }
 }
