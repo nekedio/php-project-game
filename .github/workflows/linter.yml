@@ -10,6 +10,7 @@ jobs:
 
     steps:
     - name: Setup PHP
+      uses: shivammathur/setup-php
       with:
         php_version: '7.2'
     - name: Install package
