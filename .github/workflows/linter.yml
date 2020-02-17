@@ -1,0 +1,14 @@
+name: linter
+
+on: [push]
+
+
+jobs:
+  test_linter:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Hello
+      run: echo "Hello!"
+
