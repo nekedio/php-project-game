@@ -9,6 +9,11 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-    - name: Hello
-      run: echo "Hello!"
+    - name: Setup PHP
+      with:
+        php_version: '7.2'
+    - name: Install package
+      run: make install
+    - name: Start linter
+      run: make lint
 
