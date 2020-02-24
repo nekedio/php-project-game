@@ -1,7 +1,7 @@
 {
     "name": "nekedio/php-project-lvl1",
     "description": "Project Brain Games",
-    "bin": ["bin/brain-even"],
+    "bin": ["./bin/brain-even"],
     "scripts": {"phpcs": "phpcs"},
     "autoload": {
         "files": ["src/Cli.php", "src/even.php"]
