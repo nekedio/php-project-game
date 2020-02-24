@@ -18,4 +18,4 @@
 
 [![asciicast](https://asciinema.org/a/LL1yJtGJ16ZRH7U5RD3KXUZQt.svg)](https://asciinema.org/a/LL1yJtGJ16ZRH7U5RD3KXUZQt)
 
-<script id="asciicast-LL1yJtGJ16ZRH7U5RD3KXUZQt" src="https://asciinema.org/a/LL1yJtGJ16ZRH7U5RD3KXUZQt.js" async></script>
+https://asciinema.org/a/LL1yJtGJ16ZRH7U5RD3KXUZQt
