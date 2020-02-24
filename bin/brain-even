@@ -2,8 +2,16 @@
 
 <?php
 
-require __DIR__ .'/../vendor/autoload.php';
+//require __DIR__ .'/../vendor/autoload.php';
 //require_once __DIR__ .'/../src/even.php';
+
+$autoloadGlob = __DIR__ . '/../../../autoload.php';
+$autoloadLoc = __DIR__ . '/../vendor/autoload.php';
+if (file_exists($autoloadGlob)) {
+    require_once $autoloadGlob;
+} else {
+    require_once $autoloadLoc;
+}
 
 use function BrainGames\Cli\yourName;
 use function BrainGames\even\runEven;
