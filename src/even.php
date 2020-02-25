@@ -19,6 +19,7 @@ function runEven($nameUser)
         $answer = prompt('Your answer');
         if (!(in_array($answer, $arrayCorrectAnswer) && ($answer == correctAnswer($randomNumber)))) {
             line("'%s' is wrong answer ;(. Correct answer was '%s'", $answer, correctAnswer($randomNumber));
+            break;  // выход из игры в случае неверного ответа
         } else {
             line('Correct!');
             $countCorrectAnswer = $countCorrectAnswer + 1;
