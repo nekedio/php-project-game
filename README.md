@@ -17,10 +17,12 @@
 3. 'brain-even'
 
 ### From week even or odd number
-1. 'brain-even'
+'brain-even'
+
 [![asciicast](https://asciinema.org/a/304369.svg)](https://asciinema.org/a/304369)
 
 
 ### Count the expression
-1. 'brain-calc'
+'brain-calc'
+
 [![asciicast](https://asciinema.org/a/305094.svg)](https://asciinema.org/a/305094)
