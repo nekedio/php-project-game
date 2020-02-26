@@ -4,9 +4,13 @@ install:
 lint:
 	composer run-script phpcs -- --standard=PSR12 src bin
 
-gam:
+even:
 	clear
 	bin/brain-even
+
+calc:
+	clear
+	bin/brain-calc
 
 dump:
 	composer dump-autoload

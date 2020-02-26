@@ -14,18 +14,18 @@ if (file_exists($autoloadGlob)) {
 }
 
 use function BrainGames\Cli\yourName;
-use function BrainGames\Cli\helloEven;
+use function BrainGames\Cli\helloCalc;
 use function BrainGames\Cli\engGame;
 use function BrainGames\engine\engineGames;
-use function BrainGames\games\even\runEven;
+use function BrainGames\games\calc\runCalc;
 
-helloEven(); //приветствие игры
+helloCalc(); //приветствие игры
 
 $nameUser = yourName(); //запрос имени
 
 $counter = 0;
 while ($counter < COUNTSETH) {
-    if (engineGames(runEven())){
+    if (engineGames(runCalc())){
         $counter++;
     } else {
     return;

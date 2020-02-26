@@ -1,0 +1,27 @@
+<?php
+
+namespace BrainGames\games\calc;
+
+use function cli\line;  //для работы line и prompt
+use function cli\prompt;
+
+function runCalc()
+{
+    $arrayAction = ['+', '-', '*'];
+    $randomNumber1 = rand(0, 9);
+    $randomNumberAction = $arrayAction[mt_rand(0, 2)];
+    $randomNumber2 = rand(0, 9);
+
+    if ($randomNumberAction == '*') {
+        $result = $randomNumber1 * $randomNumber2;
+    } elseif ($randomNumberAction == '+') {
+        $result = $randomNumber1 + $randomNumber2;
+    } else {
+        $result = $randomNumber1 - $randomNumber2;
+    }
+
+    $expression = $randomNumber1 . " " . $randomNumberAction . " " . $randomNumber2;
+    line("Question: %s", $expression);
+    $answer = prompt('Your answer');
+    return [$answer, $result];
+}
