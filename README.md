@@ -17,3 +17,6 @@
 3. 'brain-even'
 
 [![asciicast](https://asciinema.org/a/LL1yJtGJ16ZRH7U5RD3KXUZQt.svg)](https://asciinema.org/a/LL1yJtGJ16ZRH7U5RD3KXUZQt)
+
+
+[![asciicast](https://asciinema.org/a/305094.svg)](https://asciinema.org/a/305094)
