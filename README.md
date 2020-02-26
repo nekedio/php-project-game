@@ -14,7 +14,8 @@
 
 1. Install globally composer
 2. 'composer global require nekedio/php-project-lvl1'
-3. 'brain-even'
+
+[![asciicast](https://asciinema.org/a/305159.svg)](https://asciinema.org/a/305159)
 
 ### From week even or odd number
 'brain-even'
