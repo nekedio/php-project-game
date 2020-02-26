@@ -26,6 +26,3 @@
 'brain-calc'
 
 [![asciicast](https://asciinema.org/a/305094.svg)](https://asciinema.org/a/305094)
-
-
-<script id="asciicast-305094" src="https://asciinema.org/a/305094.js" async></script>
