@@ -17,6 +17,7 @@
 
 [![asciicast](https://asciinema.org/a/305159.svg)](https://asciinema.org/a/305159)
 
+
 ### From week even or odd number
 > brain-even
 
@@ -27,3 +28,9 @@
 > brain-calc
 
 [![asciicast](https://asciinema.org/a/305094.svg)](https://asciinema.org/a/305094)
+
+### Find GCD
+> brain-gcd
+
+[![asciicast](https://asciinema.org/a/305473.svg)](https://asciinema.org/a/305473)
+
