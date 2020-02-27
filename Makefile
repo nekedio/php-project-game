@@ -16,5 +16,9 @@ gcd:
 	clear
 	bin/brain-gcd
 
+progr:
+	clear
+	bin/brain-progression
+
 dump:
 	composer dump-autoload
