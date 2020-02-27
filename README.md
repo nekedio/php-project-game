@@ -8,12 +8,22 @@
 ### Install
 
 1. clone repository
-2. `make install`
+2. > make install
 
 ### Install globally via composer
 
 1. Install globally composer
-2. 'composer global require nekedio/php-project-lvl1'
-3. 'brain-even'
+2. > composer global require nekedio/php-project-lvl1
 
-[![asciicast](https://asciinema.org/a/LL1yJtGJ16ZRH7U5RD3KXUZQt.svg)](https://asciinema.org/a/LL1yJtGJ16ZRH7U5RD3KXUZQt)
+[![asciicast](https://asciinema.org/a/305159.svg)](https://asciinema.org/a/305159)
+
+### From week even or odd number
+> brain-even
+
+[![asciicast](https://asciinema.org/a/304369.svg)](https://asciinema.org/a/304369)
+
+
+### Count the expression
+> brain-calc
+
+[![asciicast](https://asciinema.org/a/305094.svg)](https://asciinema.org/a/305094)
