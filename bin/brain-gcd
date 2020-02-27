@@ -1,0 +1,35 @@
+#!/usr/bin/env php
+
+<?php
+
+define("COUNTSETH", 3); //количество сэтов игры
+
+$autoloadGlob = __DIR__ . '/../../../autoload.php';
+$autoloadLoc = __DIR__ . '/../vendor/autoload.php';
+
+if (file_exists($autoloadGlob)) {
+    require_once $autoloadGlob;
+} else {
+    require_once $autoloadLoc;
+}
+
+use function BrainGames\Cli\yourName;
+use function BrainGames\Cli\helloCalc;
+use function BrainGames\Cli\engGame;
+use function BrainGames\engine\engineGames;
+use function BrainGames\games\gcd\runGcd;
+
+helloCalc(); //приветствие игры
+
+$nameUser = yourName(); //запрос имени
+
+$counter = 0;
+while ($counter < COUNTSETH) {
+    if (engineGames(runGcd())){
+        $counter++;
+    } else {
+    return;
+    }
+}
+
+engGame($nameUser);

@@ -2,9 +2,6 @@
 
 namespace BrainGames\games\calc;
 
-use function cli\line;  //для работы line и prompt
-use function cli\prompt;
-
 function runCalc()
 {
     $arrayAction = ['+', '-', '*'];

@@ -1,10 +1,10 @@
 {
     "name": "nekedio/php-project-lvl1",
     "description": "Project Brain Games",
-    "bin": ["./bin/brain-even", "./bin/brain-calc"],
+    "bin": ["./bin/brain-even", "./bin/brain-calc", "./bin/brain-gcd"],
     "scripts": {"phpcs": "phpcs"},
     "autoload": {
-        "files": ["src/Cli.php", "src/games/even.php", "src/games/calc.php", "src/engine.php"]
+        "files": ["src/Cli.php", "src/games/even.php", "src/games/calc.php", "src/engine.php", "src/games/gcd.php"]
     },
     "authors": [
         {

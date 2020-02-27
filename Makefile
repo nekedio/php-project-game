@@ -13,5 +13,9 @@ calc:
 	clear
 	bin/brain-calc
 
+gcd:
+	clear
+	bin/brain-gcd
+
 dump:
 	composer dump-autoload
