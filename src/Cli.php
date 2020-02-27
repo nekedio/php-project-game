@@ -14,12 +14,14 @@ function yourName()
     return $nameUser;
 }
 
+
 function helloEven()
 {
     line('Welcome to the Brain Game!');
     line('Answer "yes" if the number is even, otherwise answer "no".');
     return;
 }
+
 
 function helloCalc()
 {
@@ -28,15 +30,26 @@ function helloCalc()
     return;
 }
 
+
+function question($qwestion)
+{
+    line("Question: %s", $qwestion);
+    $answer = prompt('Your answer');
+    return $answer;
+}
+
+
 function incorrectAnswer($result)
 {
     line("'%s' is wrong answer ;(. Correct answer was '%s'", $result[0], $result[1]);
 }
 
+
 function correctAnswer()
 {
     line('Correct!');
 }
+
 
 function engGame($nameUser)
 {

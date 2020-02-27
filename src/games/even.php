@@ -7,13 +7,14 @@ use function cli\prompt;
 
 define("EVEN", 2); //для проверки на четность
 
-function runEven()
+/*
+function runEvenOld()
 {
     $result = [];
     $randomNumber = rand(0, 999);
     $arrayCorrectAnswer = ['yes', 'no'];
-    line("Question: %s", $randomNumber);
-    $answer = prompt('Your answer');
+    //line("Question: %s", $randomNumber);
+    //$answer = prompt('Your answer');
     if (!(in_array($answer, $arrayCorrectAnswer) && ($answer == correctAnswer($randomNumber)))) {
         $result = [$answer, correctAnswer($randomNumber)];
     } else {
@@ -21,12 +22,15 @@ function runEven()
     }
     return $result;
 }
+*/
 
-// формирование правильного ответа
-function correctAnswer($number)
+
+function runEven()
 {
-    if ($number % EVEN == 0) {
-        return $correctAnswer = 'yes';
+    $randomNumber = rand(0, 999);
+
+    if ($randomNumber % EVEN == 0) {
+        return [$randomNumber, 'yes'];
     }
-    return $correctAnswer = 'no';
+    return [$randomNumber, 'no'];
 }

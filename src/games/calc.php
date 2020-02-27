@@ -13,15 +13,13 @@ function runCalc()
     $randomNumber2 = rand(0, 9);
 
     if ($randomNumberAction == '*') {
-        $result = $randomNumber1 * $randomNumber2;
+        $correctResult = $randomNumber1 * $randomNumber2;
     } elseif ($randomNumberAction == '+') {
-        $result = $randomNumber1 + $randomNumber2;
+        $correctResult = $randomNumber1 + $randomNumber2;
     } else {
-        $result = $randomNumber1 - $randomNumber2;
+        $correctResult = $randomNumber1 - $randomNumber2;
     }
 
     $expression = $randomNumber1 . " " . $randomNumberAction . " " . $randomNumber2;
-    line("Question: %s", $expression);
-    $answer = prompt('Your answer');
-    return [$answer, $result];
+    return [$expression, (string)$correctResult];
 }

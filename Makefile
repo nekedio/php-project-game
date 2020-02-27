@@ -2,6 +2,7 @@ install:
 	composer install
 
 lint:
+	clear
 	composer run-script phpcs -- --standard=PSR12 src bin
 
 even:
