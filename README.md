@@ -18,7 +18,7 @@
 [![asciicast](https://asciinema.org/a/305159.svg)](https://asciinema.org/a/305159)
 
 
-### From week even or odd number
+### Guess if the number of even
 > brain-even
 
 [![asciicast](https://asciinema.org/a/304369.svg)](https://asciinema.org/a/304369)
@@ -33,16 +33,16 @@
 ### Find GCD
 > brain-gcd
 
-[![asciicast](https://asciinema.org/a/305473.svg)](https://asciinema.org/a/305473)
+[![asciicast](https://asciinema.org/a/305834.svg)](https://asciinema.org/a/305834)
 
 
 ### Find the progression element
-> brain-gcd
+> brain-progression
 
-[![asciicast](https://asciinema.org/a/vAZx6UISApGcibgOcTSXU2cAd.svg)](https://asciinema.org/a/vAZx6UISApGcibgOcTSXU2cAd)
+[![asciicast](https://asciinema.org/a/305835.svg)](https://asciinema.org/a/305835)
 
 
-### From week simple or odd number
+### Guess if the number of simple
 > brain-prime
 
 [![asciicast](https://asciinema.org/a/305815.svg)](https://asciinema.org/a/305815)
