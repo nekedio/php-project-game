@@ -30,6 +30,19 @@ function helloCalc()
     return;
 }
 
+function helloProgression()
+{
+    line('Welcome to the Brain Game!');
+    line('What number is missing in the progression?');
+    return;
+}
+
+function helloPrime()
+{
+    line('Welcome to the Brain Game!');
+    line('Answer "yes" if given number is prime. Otherwise answer "no".');
+    return;
+}
 
 function question($qwestion)
 {

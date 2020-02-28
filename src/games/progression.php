@@ -6,7 +6,7 @@ function runProgression()
 {
     $progr = "";
     $k = rand(-10, 10);
-    $d = rand(2, 4);
+    $d = rand(2, 3);
     $question = rand(0, 9);
     for ($i = 0; $i < 10; $i++) {
         $k = $k + $d;

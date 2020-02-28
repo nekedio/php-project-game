@@ -20,5 +20,9 @@ progr:
 	clear
 	bin/brain-progression
 
+prime:
+	clear
+	bin/brain-prime
+
 dump:
 	composer dump-autoload
