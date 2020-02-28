@@ -41,3 +41,8 @@
 
 [![asciicast](https://asciinema.org/a/vAZx6UISApGcibgOcTSXU2cAd.svg)](https://asciinema.org/a/vAZx6UISApGcibgOcTSXU2cAd)
 
+
+### From week simple or odd number
+> brain-prime
+
+[![asciicast](https://asciinema.org/a/305815.svg)](https://asciinema.org/a/305815)
