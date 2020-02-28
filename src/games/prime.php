@@ -4,16 +4,16 @@ namespace BrainGames\games\prime;
 
 function runPrime()
 {
-    $quwestion = rand(0, 99);
-    if ($quwestion == 0 || $quwestion == 1) {
-        return [$quwestion, 'no'];
+    $question = rand(0, 99);
+    if ($question == 0 || $question == 1) {
+        return [$question, 'no'];
     }
-    $i = round($quwestion / 2, 0);
+    $i = round($question / 2, 0);
     while ($i > 1) {
-        if ($quwestion % $i == 0) {
-            return [$quwestion, 'no'];
+        if ($question % $i == 0) {
+            return [$question, 'no'];
         }
         $i--;
     }
-    return [$quwestion, 'yes'];
+    return [$question, 'yes'];
 }

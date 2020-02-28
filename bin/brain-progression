@@ -23,10 +23,10 @@ helloProgression(); //приветствие игры
 
 $nameUser = yourName(); //запрос имени
 
-$counter = 0;
-while ($counter < COUNTSETH) {
+$counterSet = 0;
+while ($counterSet < COUNTSETH) {
     if (engineGames(runProgression())){
-        $counter++;
+        $counterSet++;
     } else {
     return;
     }

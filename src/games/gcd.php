@@ -11,10 +11,10 @@ function runGcd()
     return [$expression, (string)$correctAnswer];
 }
 
-function gcd($n1, $n2)
+function gcd($numder1, $numder2) //вычисление наибольшего делителя
 {
-    if ($n2 == 0) {
-        return $n1;
+    if ($numder2 == 0) {
+        return $numder1;
     }
-    return gcd($n2, $n1 % $n2);
+    return gcd($numder2, $numder1 % $numder2);
 }

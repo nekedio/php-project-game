@@ -23,10 +23,10 @@ helloEven(); //приветствие игры
 
 $nameUser = yourName(); //запрос имени
 
-$counter = 0;
-while ($counter < COUNTSETH) {
+$counterSet = 0;
+while ($counterSet < COUNTSETH) {
     if (engineGames(runEven())){
-        $counter++;
+        $counterSet++;
     } else {
     return;
     }
