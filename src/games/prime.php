@@ -15,5 +15,5 @@ function runPrime()
         }
         $i--;
     }
-    return [$quwestion, 'yes'];    
+    return [$quwestion, 'yes'];
 }
