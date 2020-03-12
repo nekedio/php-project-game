@@ -2,7 +2,16 @@
 
 namespace BrainGames\games\prime;
 
-function runPrime()
+function getDataGamePrime()
+{
+    $dataGame = [];
+    for ($i = 0; $i < COUNTSETH; $i++) {
+        $dataGame[] = getDataSetPrime();
+    }
+    return $dataGame;
+}
+
+function getDataSetPrime()
 {
     $question = rand(0, 99);
     if ($question == 0 || $question == 1) {

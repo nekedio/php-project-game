@@ -2,20 +2,29 @@
 
 namespace BrainGames\engine;
 
-use function BrainGames\Cli\correctAnswer;
-use function BrainGames\Cli\incorrectAnswer;
-use function BrainGames\Cli\question;
+use function cli\line;
+use function cli\prompt;
 
-function engineGames($resultSetGame)
+function startEngine($dataGameCalc)
 {
-    //var_dump($resultSetGame);
-    $answer = question($resultSetGame[0]);
-    $correctAnswer = $resultSetGame[1];
-    if ($answer === $correctAnswer) {
-        correctAnswer();
-        return true;
-    } else {
-        incorrectAnswer([$answer, $correctAnswer]);
-        return false;
+    echo "\n";
+    $nameUser = prompt('May I have your name?');
+    line("Hello, %s!", $nameUser);
+    echo "\n";
+
+    for ($i = 0; $i < COUNTSETH; $i++) {
+        line("Question: %s", $dataGameCalc[$i][0]);
+        $answerUser = prompt('Your answer');
+        $correctAnswer = $dataGameCalc[$i][1];
+
+        if ($answerUser === $correctAnswer) {
+            line('Correct!');
+        } else {
+            line("'%s' is wrong answer ;(. Correct answer was '%s'", $answerUser, $correctAnswer);
+            return false;
+        }
     }
+    
+    line("Congratulation, %s!", $nameUser);
+    return;
 }

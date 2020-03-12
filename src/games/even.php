@@ -4,7 +4,16 @@ namespace BrainGames\games\even;
 
 define("EVEN", 2); //для проверки на четность
 
-function runEven()
+function getDataGameEven()
+{
+    $dataGame = [];
+    for ($i = 0; $i < COUNTSETH; $i++) {
+        $dataGame[] = getDataSetEven();
+    }
+    return $dataGame;
+}
+
+function getDataSetEven()
 {
     $randomNumber = rand(0, 999);
 

@@ -13,23 +13,9 @@ if (file_exists($autoloadGlob)) {
     require_once $autoloadLoc;
 }
 
-use function BrainGames\Cli\yourName;
-use function BrainGames\Cli\helloEven;
-use function BrainGames\Cli\engGame;
-use function BrainGames\engine\engineGames;
-use function BrainGames\games\even\runEven;
+use function BrainGames\games\even\getDataGameEven;
+use function BrainGames\engine\startEngine;
 
-helloEven(); //приветствие игры
+BrainGames\cli\welcomeGameEven();
 
-$nameUser = yourName(); //запрос имени
-
-$counterSet = 0;
-while ($counterSet < COUNTSETH) {
-    if (engineGames(runEven())){
-        $counterSet++;
-    } else {
-    return;
-    }
-}
-
-engGame($nameUser);
+startEngine(getDataGameEven());

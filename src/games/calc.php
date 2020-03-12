@@ -2,21 +2,34 @@
 
 namespace BrainGames\games\calc;
 
-function runCalc()
+function getDataGameCalc()
+{
+    $dataGame = [];
+    for ($i = 0; $i < COUNTSETH; $i++) {
+        $dataGame[] = getDataSetCalc();
+    }
+    return $dataGame;
+}
+
+function getDataSetCalc()
 {
     $arrayAction = ['+', '-', '*'];
+    $randomAction = $arrayAction[array_rand($arrayAction, 1)];
     $randomNumber1 = rand(0, 9);
-    $randomNumberAction = $arrayAction[mt_rand(0, 2)];
     $randomNumber2 = rand(0, 9);
 
-    if ($randomNumberAction == '*') {
-        $correctResult = $randomNumber1 * $randomNumber2;
-    } elseif ($randomNumberAction == '+') {
-        $correctResult = $randomNumber1 + $randomNumber2;
-    } else {
-        $correctResult = $randomNumber1 - $randomNumber2;
+    switch ($randomAction) {
+        case '*':
+            $correctAnswer = $randomNumber1 * $randomNumber2;
+            break;
+        case '+':
+            $correctAnswer = $randomNumber1 + $randomNumber2;
+            break;
+        case '-':
+            $correctAnswer = $randomNumber1 - $randomNumber2;
+            break;
     }
 
-    $expression = $randomNumber1 . " " . $randomNumberAction . " " . $randomNumber2;
-    return [$expression, (string)$correctResult];
+    $question = $randomNumber1 . " " . $randomAction . " " . $randomNumber2;
+    return [$question, (string)$correctAnswer];
 }

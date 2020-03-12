@@ -13,23 +13,9 @@ if (file_exists($autoloadGlob)) {
     require_once $autoloadLoc;
 }
 
-use function BrainGames\Cli\yourName;
-use function BrainGames\Cli\helloProgression;
-use function BrainGames\Cli\engGame;
-use function BrainGames\engine\engineGames;
-use function BrainGames\games\progression\runProgression;
+use function BrainGames\games\Progression\getDataGameProgression;
+use function BrainGames\engine\startEngine;
 
-helloProgression(); //приветствие игры
+BrainGames\cli\welcomeGameProgression();
 
-$nameUser = yourName(); //запрос имени
-
-$counterSet = 0;
-while ($counterSet < COUNTSETH) {
-    if (engineGames(runProgression())){
-        $counterSet++;
-    } else {
-    return;
-    }
-}
-
-engGame($nameUser);
+startEngine(getDataGameProgression());

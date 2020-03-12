@@ -26,3 +26,6 @@ prime:
 
 dump:
 	composer dump-autoload
+
+test:
+	bin/brain-test

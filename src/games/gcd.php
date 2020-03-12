@@ -2,13 +2,22 @@
 
 namespace BrainGames\games\gcd;
 
-function runGcd()
+function getDataGameGcd()
+{
+    $dataGame = [];
+    for ($i = 0; $i < COUNTSETH; $i++) {
+        $dataGame[] = getDataSetGcd();
+    }
+    return $dataGame;
+}
+
+function getDataSetGcd()
 {
     $randomNumber1 = rand(0, 99);
     $randomNumber2 = rand(0, 99);
-    $expression = $randomNumber1 . " " . $randomNumber2;
+    $question = $randomNumber1 . " " . $randomNumber2;
     $correctAnswer = gcd($randomNumber1, $randomNumber2);
-    return [$expression, (string)$correctAnswer];
+    return [$question, (string)$correctAnswer];
 }
 
 function gcd($numder1, $numder2) //вычисление наибольшего делителя
