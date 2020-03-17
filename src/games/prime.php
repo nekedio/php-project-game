@@ -2,13 +2,21 @@
 
 namespace BrainGames\games\prime;
 
+use function BrainGames\engine\startEngine;
+
 function getDataGamePrime()
 {
-    $dataGame = [];
-    for ($i = 0; $i < COUNTSETH; $i++) {
-        $dataGame[] = getDataSetPrime();
-    }
-    return $dataGame;
+    $arrayDataSet1 = getDataSetPrime();
+    $arrayDataSet2 = getDataSetPrime();
+    $arrayDataSet3 = getDataSetPrime();
+    $result = [
+        "condition" => "Answer \"yes\" if given number is prime. Otherwise answer \"no\".",
+        ["question" => $arrayDataSet1[0], "correctAnswer" => $arrayDataSet1[1]],
+        ["question" => $arrayDataSet2[0], "correctAnswer" => $arrayDataSet2[1]],
+        ["question" => $arrayDataSet3[0], "correctAnswer" => $arrayDataSet3[1]]
+    ];
+    startEngine($result);
+    return;
 }
 
 function getDataSetPrime()

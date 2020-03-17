@@ -2,8 +2,6 @@
 
 <?php
 
-define("COUNTSETH", 3); //количество сэтов игры
-
 $autoloadGlob = __DIR__ . '/../../../autoload.php';
 $autoloadLoc = __DIR__ . '/../vendor/autoload.php';
 
@@ -13,9 +11,4 @@ if (file_exists($autoloadGlob)) {
     require_once $autoloadLoc;
 }
 
-use function BrainGames\games\gcd\getDataGameGcd;
-use function BrainGames\engine\startEngine;
-
-BrainGames\cli\welcomeGameGcd();
-
-startEngine(getDataGameGcd());
+BrainGames\games\gcd\getDataGameGcd();

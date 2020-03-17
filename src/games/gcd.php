@@ -2,13 +2,21 @@
 
 namespace BrainGames\games\gcd;
 
+use function BrainGames\engine\startEngine;
+
 function getDataGameGcd()
 {
-    $dataGame = [];
-    for ($i = 0; $i < COUNTSETH; $i++) {
-        $dataGame[] = getDataSetGcd();
-    }
-    return $dataGame;
+    $arrayDataSet1 = getDataSetGcd();
+    $arrayDataSet2 = getDataSetGcd();
+    $arrayDataSet3 = getDataSetGcd();
+    $result = [
+        "condition" => "Find the greatest common divisor of given numbers.",
+        ["question" => $arrayDataSet1[0], "correctAnswer" => $arrayDataSet1[1]],
+        ["question" => $arrayDataSet2[0], "correctAnswer" => $arrayDataSet2[1]],
+        ["question" => $arrayDataSet3[0], "correctAnswer" => $arrayDataSet3[1]]
+    ];
+    startEngine($result);
+    return;
 }
 
 function getDataSetGcd()

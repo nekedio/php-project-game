@@ -11,7 +11,6 @@
     "scripts": {"phpcs": "phpcs"},
     "autoload": {
         "files": [
-            "src/Cli.php",
             "src/games/even.php",
             "src/games/calc.php",
             "src/engine.php",

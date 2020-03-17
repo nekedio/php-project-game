@@ -2,13 +2,21 @@
 
 namespace BrainGames\games\progression;
 
+use function BrainGames\engine\startEngine;
+
 function getDataGameProgression()
 {
-    $dataGame = [];
-    for ($i = 0; $i < COUNTSETH; $i++) {
-        $dataGame[] = getDataSetProgression();
-    }
-    return $dataGame;
+    $arrayDataSet1 = getDataSetProgression();
+    $arrayDataSet2 = getDataSetProgression();
+    $arrayDataSet3 = getDataSetProgression();
+    $result = [
+        "condition" => "What number is missing in the progression?",
+        ["question" => $arrayDataSet1[0], "correctAnswer" => $arrayDataSet1[1]],
+        ["question" => $arrayDataSet2[0], "correctAnswer" => $arrayDataSet2[1]],
+        ["question" => $arrayDataSet3[0], "correctAnswer" => $arrayDataSet3[1]]
+    ];
+    startEngine($result);
+    return;
 }
 
 function getDataSetProgression()
