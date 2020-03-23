@@ -24,8 +24,11 @@ function getDataSetProgression()
     $randomStepMin = 2;
     $randomStepMax = 3;
     $step = rand($randomStepMin, $randomStepMax);
-    $question = rand(0, 9);
-    for ($i = 0; $i < 10; $i++) {
+    $randomQuestionMin = 0;
+    $randomQuestionMax = 9;
+    $question = rand($randomQuestionMin, $randomQuestionMax);
+    $countMemberProgression = 10;
+    for ($i = 0; $i < $countMemberProgression; $i++) {
         $progressionMember = $progressionMember + $step;
         if ($i == $question) {
             $progression = $progression . " " . "..";
