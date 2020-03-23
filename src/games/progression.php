@@ -6,32 +6,32 @@ use function BrainGames\engine\startEngine;
 
 function getDataGameProgression()
 {
-    $arrayDataSet1 = getDataSetProgression();
-    $arrayDataSet2 = getDataSetProgression();
-    $arrayDataSet3 = getDataSetProgression();
-    $result = [
-        "condition" => "What number is missing in the progression?",
-        ["question" => $arrayDataSet1[0], "correctAnswer" => $arrayDataSet1[1]],
-        ["question" => $arrayDataSet2[0], "correctAnswer" => $arrayDataSet2[1]],
-        ["question" => $arrayDataSet3[0], "correctAnswer" => $arrayDataSet3[1]]
-    ];
-    startEngine($result);
+    $conditionGames = 'What number is missing in the progression?';
+    $dataGame = [];
+    while (count($dataGame) < COUNT_SETH) {
+        $dataGame[] = getDataSetProgression();
+    }
+    startEngine($conditionGames, $dataGame);
     return;
 }
 
 function getDataSetProgression()
 {
     $progression = "";
-    $k = rand(-10, 10);
-    $d = rand(2, 3);
+    $randomFirsProgressionMemberMin = -10;
+    $randomFirsProgressionMemberMax = 10;
+    $progressionMember = rand($randomFirsProgressionMemberMin, $randomFirsProgressionMemberMax);
+    $randomStepMin = 2;
+    $randomStepMax = 3;
+    $step = rand($randomStepMin, $randomStepMax);
     $question = rand(0, 9);
     for ($i = 0; $i < 10; $i++) {
-        $k = $k + $d;
+        $progressionMember = $progressionMember + $step;
         if ($i == $question) {
             $progression = $progression . " " . "..";
-            $ansver = $k;
+            $ansver = $progressionMember;
         } else {
-            $progression = $progression . " " . $k;
+            $progression = $progression . " " . $progressionMember;
         }
     }
     return [trim($progression), (string)$ansver];

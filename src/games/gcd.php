@@ -6,32 +6,30 @@ use function BrainGames\engine\startEngine;
 
 function getDataGameGcd()
 {
-    $arrayDataSet1 = getDataSetGcd();
-    $arrayDataSet2 = getDataSetGcd();
-    $arrayDataSet3 = getDataSetGcd();
-    $result = [
-        "condition" => "Find the greatest common divisor of given numbers.",
-        ["question" => $arrayDataSet1[0], "correctAnswer" => $arrayDataSet1[1]],
-        ["question" => $arrayDataSet2[0], "correctAnswer" => $arrayDataSet2[1]],
-        ["question" => $arrayDataSet3[0], "correctAnswer" => $arrayDataSet3[1]]
-    ];
-    startEngine($result);
+    $conditionGames = 'Find the greatest common divisor of given numbers.';
+    $dataGame = [];
+    while (count($dataGame) < COUNT_SETH) {
+        $dataGame[] = getDataSetGcd();
+    }
+    startEngine($conditionGames, $dataGame);
     return;
 }
 
 function getDataSetGcd()
 {
-    $randomNumber1 = rand(0, 99);
-    $randomNumber2 = rand(0, 99);
+    $randomNumberMin = 0;
+    $randomNumberMax = 99;
+    $randomNumber1 = rand($randomNumberMin, $randomNumberMax);
+    $randomNumber2 = rand($randomNumberMin, $randomNumberMax);
     $question = $randomNumber1 . " " . $randomNumber2;
-    $correctAnswer = gcd($randomNumber1, $randomNumber2);
+    $correctAnswer = getGcd($randomNumber1, $randomNumber2);
     return [$question, (string)$correctAnswer];
 }
 
-function gcd($numder1, $numder2) //вычисление наибольшего делителя
+function getGcd($numder1, $numder2) //вычисление наибольшего делителя
 {
     if ($numder2 == 0) {
         return $numder1;
     }
-    return gcd($numder2, $numder1 % $numder2);
+    return getGcd($numder2, $numder1 % $numder2);
 }

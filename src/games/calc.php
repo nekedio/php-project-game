@@ -6,16 +6,12 @@ use function BrainGames\engine\startEngine;
 
 function getDataGameCalc()
 {
-    $arrayDataSet1 = getDataSetCalc();
-    $arrayDataSet2 = getDataSetCalc();
-    $arrayDataSet3 = getDataSetCalc();
-    $result = [
-        "condition" => "Answer \"yes\" if the number is even, otherwise answer \"no\".",
-        ["question" => $arrayDataSet1[0], "correctAnswer" => $arrayDataSet1[1]],
-        ["question" => $arrayDataSet2[0], "correctAnswer" => $arrayDataSet2[1]],
-        ["question" => $arrayDataSet3[0], "correctAnswer" => $arrayDataSet3[1]]
-    ];
-    startEngine($result);
+    $conditionGames = 'What is the result of the expression?';
+    $dataGame = [];
+    while (count($dataGame) < COUNT_SETH) {
+        $dataGame[] = getDataSetCalc();
+    }
+    startEngine($conditionGames, $dataGame);
     return;
 }
 

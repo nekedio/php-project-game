@@ -6,31 +6,35 @@ use function BrainGames\engine\startEngine;
 
 function getDataGamePrime()
 {
-    $arrayDataSet1 = getDataSetPrime();
-    $arrayDataSet2 = getDataSetPrime();
-    $arrayDataSet3 = getDataSetPrime();
-    $result = [
-        "condition" => "Answer \"yes\" if given number is prime. Otherwise answer \"no\".",
-        ["question" => $arrayDataSet1[0], "correctAnswer" => $arrayDataSet1[1]],
-        ["question" => $arrayDataSet2[0], "correctAnswer" => $arrayDataSet2[1]],
-        ["question" => $arrayDataSet3[0], "correctAnswer" => $arrayDataSet3[1]]
-    ];
-    startEngine($result);
+    $conditionGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+    $dataGame = [];
+    while (count($dataGame) < COUNT_SETH) {
+        $dataGame[] = getDataSetPrime();
+    }
+    startEngine($conditionGame, $dataGame);
     return;
 }
 
 function getDataSetPrime()
 {
-    $question = rand(0, 99);
-    if ($question == 0 || $question == 1) {
-        return [$question, 'no'];
+    $randomNumberMin = 0;
+    $randomNumberMax = 99;
+    $question = rand($randomNumberMin, $randomNumberMax);
+    $correctAnswer = isPrimeNumber($question) ? 'yes' : 'no';
+    return [$question, $correctAnswer];
+}
+
+function isPrimeNumber($number)
+{
+    if ($number == 0 || $number == 1) {
+        return false;
     }
-    $i = round($question / 2, 0);
+    $i = round($number / 2, 0);
     while ($i > 1) {
-        if ($question % $i == 0) {
-            return [$question, 'no'];
+        if ($number % $i == 0) {
+            return false;
         }
         $i--;
     }
-    return [$question, 'yes'];
+    return true;
 }

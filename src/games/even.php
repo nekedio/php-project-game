@@ -8,22 +8,20 @@ use function BrainGames\engine\startEngine;
 
 function getDataGameEven()
 {
-    $arrayDataSet1 = getDataSetEven();
-    $arrayDataSet2 = getDataSetEven();
-    $arrayDataSet3 = getDataSetEven();
-    $result = [
-        "condition" => "Answer \"yes\" if the number is even, otherwise answer \"no\".",
-        ["question" => $arrayDataSet1[0], "correctAnswer" => $arrayDataSet1[1]],
-        ["question" => $arrayDataSet2[0], "correctAnswer" => $arrayDataSet2[1]],
-        ["question" => $arrayDataSet3[0], "correctAnswer" => $arrayDataSet3[1]]
-    ];
-    startEngine($result);
+    $conditionGames = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $dataGame = [];
+    while (count($dataGame) < COUNT_SETH) {
+        $dataGame[] = getDataSetEven();
+    }
+    startEngine($conditionGames, $dataGame);
     return;
 }
 
 function getDataSetEven()
 {
-    $randomNumber = rand(0, 999);
+    $randomNumberMin = 0;
+    $randomNumberMax = 999;
+    $randomNumber = rand($randomNumberMin, $randomNumberMax);
 
     if ($randomNumber % EVEN == 0) {
         return [$randomNumber, 'yes'];
