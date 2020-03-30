@@ -2,40 +2,48 @@
 
 namespace BrainGames\games\progression;
 
-use function BrainGames\engine\startEngine;
+use function BrainGames\engine\engine;
 
-function getDataGameProgression()
+use const BrainGames\engine;
+
+function initGameProgression()
 {
-    $conditionGames = 'What number is missing in the progression?';
+    $conditionGame = 'What number is missing in the progression?';
     $dataGame = [];
-    while (count($dataGame) < COUNT_SETH) {
+    while (count($dataGame) < SETS_COUNT) {
         $dataGame[] = getDataSetProgression();
     }
-    startEngine($conditionGames, $dataGame);
+    engine($conditionGame, $dataGame);
+    getRandomProgression();
     return;
 }
 
 function getDataSetProgression()
 {
-    $progression = "";
-    $randomFirsProgressionMemberMin = -10;
-    $randomFirsProgressionMemberMax = 10;
-    $progressionMember = rand($randomFirsProgressionMemberMin, $randomFirsProgressionMemberMax);
-    $randomStepMin = 2;
-    $randomStepMax = 3;
-    $step = rand($randomStepMin, $randomStepMax);
-    $randomQuestionMin = 0;
-    $randomQuestionMax = 9;
-    $question = rand($randomQuestionMin, $randomQuestionMax);
-    $countMemberProgression = 10;
-    for ($i = 0; $i < $countMemberProgression; $i++) {
-        $progressionMember = $progressionMember + $step;
-        if ($i == $question) {
-            $progression = $progression . " " . "..";
-            $ansver = $progressionMember;
-        } else {
-            $progression = $progression . " " . $progressionMember;
+    $progression = getRandomProgression();
+    $questionNumber = rand(0, count($progression) - 1);
+    $correctAnswer = $progression[$questionNumber];
+    $question = [];
+    foreach ($progression as $key => $member) {
+        if ($key === $questionNumber) {
+            $question[] = "..";
+            continue;
         }
+    $question[] = $member;
     }
-    return [trim($progression), (string)$ansver];
+    return [implode(" ", $question), (string)$correctAnswer];
+}
+
+function getRandomProgression()
+{
+    $progression = [];
+    $lengthProgression = 10;
+    $minDiff = 2;
+    $maxDiff = 4;
+    $shiftProgression = rand(-5, 5);
+    $diff = rand($minDiff, $maxDiff);
+    for ($i = 0; $i < $lengthProgression; $i++) {
+        $progression[] = $diff * $i + $shiftProgression;
+    }
+    return $progression;
 }

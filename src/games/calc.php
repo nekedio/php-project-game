@@ -2,23 +2,25 @@
 
 namespace BrainGames\games\calc;
 
-use function BrainGames\engine\startEngine;
+use function BrainGames\engine\engine;
 
-function getDataGameCalc()
+use const BrainGames\engine;
+
+function initGameCalc()
 {
-    $conditionGames = 'What is the result of the expression?';
+    $conditionGame = 'What is the result of the expression?';
     $dataGame = [];
-    while (count($dataGame) < COUNT_SETH) {
+    while (count($dataGame) < SETS_COUNT) {
         $dataGame[] = getDataSetCalc();
     }
-    startEngine($conditionGames, $dataGame);
+    engine($conditionGame, $dataGame);
     return;
 }
 
 function getDataSetCalc()
 {
-    $arrayAction = ['+', '-', '*'];
-    $randomAction = $arrayAction[array_rand($arrayAction, 1)];
+    $actions = ['+', '-', '*'];
+    $randomAction = $actions[array_rand($actions, 1)];
     $randomNumber1 = rand(0, 9);
     $randomNumber2 = rand(0, 9);
 
@@ -34,6 +36,6 @@ function getDataSetCalc()
             break;
     }
 
-    $question = $randomNumber1 . " " . $randomAction . " " . $randomNumber2;
+    $question = "{$randomNumber1} {$randomAction} {$randomNumber2}";
     return [$question, (string)$correctAnswer];
 }

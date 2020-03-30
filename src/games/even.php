@@ -2,18 +2,18 @@
 
 namespace BrainGames\games\even;
 
-define("EVEN", 2);
+use function BrainGames\engine\engine;
 
-use function BrainGames\engine\startEngine;
+use const BrainGames\engine;
 
-function getDataGameEven()
+function initGameEven()
 {
-    $conditionGames = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $conditionGame = 'Answer "yes" if the number is even, otherwise answer "no".';
     $dataGame = [];
-    while (count($dataGame) < COUNT_SETH) {
+    while (count($dataGame) < SETS_COUNT) {
         $dataGame[] = getDataSetEven();
     }
-    startEngine($conditionGames, $dataGame);
+    engine($conditionGame, $dataGame);
     return;
 }
 
@@ -21,10 +21,16 @@ function getDataSetEven()
 {
     $randomNumberMin = 0;
     $randomNumberMax = 999;
-    $randomNumber = rand($randomNumberMin, $randomNumberMax);
+    $question = rand($randomNumberMin, $randomNumberMax);
+    $correctAnswer = isEvenNumber($question) ? 'yes' : 'no';
+    return [$question, $correctAnswer];
+}
 
-    if ($randomNumber % EVEN == 0) {
-        return [$randomNumber, 'yes'];
+function isEvenNumber($number)
+{
+    $even = 2;
+    if ($number % $even === 0) {
+        return true;
     }
-    return [$randomNumber, 'no'];
+    return false;
 }

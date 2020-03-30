@@ -11,4 +11,4 @@ if (file_exists($autoloadGlob)) {
     require_once $autoloadLoc;
 }
 
-BrainGames\games\prime\getDataGamePrime();
+BrainGames\games\prime\initGamePrime();

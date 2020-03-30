@@ -2,27 +2,27 @@
 
 namespace BrainGames\engine;
 
-define("COUNT_SETH", 3); //количество сетов игры
+define("SETS_COUNT", 3); //количество сетов игры
 
 use function cli\line;
 use function cli\prompt;
 
-function startEngine($conditionGames, $arrayDataGame)
+function engine($conditionGame, $arrayDataGame)
 {
     line('Welcome to the Brain Game!');
-    line($conditionGames);
-    echo "\n";
-    $nameUser = prompt('May I have your name?');
-    foreach ($arrayDataGame as $arraySethGame) {
-        line("Question: %s", $arraySethGame[0]);
+    line($conditionGame);
+    line("\n");
+    $userName = prompt('May I have your name?');
+    foreach ($arrayDataGame as [$question, $correctAnswer]) {
+        line("Question: %s", $question);
         $answerUser = prompt('Your answer');
-        if ($answerUser === $arraySethGame[1]) {
+        if ($answerUser === $correctAnswer) {
             line('Correct!');
         } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'", $answerUser, $arraySethGame[1]);
+            line("'%s' is wrong answer ;(. Correct answer was '%s'", $answerUser, $correctAnswer);
             return;
         }
     }
-    line("Congratulation, %s!", $nameUser);
+    line("Congratulation, %s!", $userName);
     return;
 }

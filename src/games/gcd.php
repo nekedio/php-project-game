@@ -2,26 +2,28 @@
 
 namespace BrainGames\games\gcd;
 
-use function BrainGames\engine\startEngine;
+use function BrainGames\engine\engine;
 
-function getDataGameGcd()
+use const BrainGames\engine;
+
+function initGameGcd()
 {
-    $conditionGames = 'Find the greatest common divisor of given numbers.';
+    $conditionGame = 'Find the greatest common divisor of given numbers.';
     $dataGame = [];
-    while (count($dataGame) < COUNT_SETH) {
+    while (count($dataGame) < SETS_COUNT) {
         $dataGame[] = getDataSetGcd();
     }
-    startEngine($conditionGames, $dataGame);
+    engine($conditionGame, $dataGame);
     return;
 }
 
 function getDataSetGcd()
 {
-    $randomNumberMin = 0;
-    $randomNumberMax = 99;
-    $randomNumber1 = rand($randomNumberMin, $randomNumberMax);
-    $randomNumber2 = rand($randomNumberMin, $randomNumberMax);
-    $question = $randomNumber1 . " " . $randomNumber2;
+    $numberMin = 0;
+    $numberMax = 99;
+    $randomNumber1 = rand($numberMin, $numberMax);
+    $randomNumber2 = rand($numberMin, $numberMax);
+    $question = "{$randomNumber1} {$randomNumber2}";
     $correctAnswer = getGcd($randomNumber1, $randomNumber2);
     return [$question, (string)$correctAnswer];
 }
