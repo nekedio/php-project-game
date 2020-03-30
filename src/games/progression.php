@@ -29,7 +29,7 @@ function getDataSetProgression()
             $question[] = "..";
             continue;
         }
-    $question[] = $member;
+        $question[] = $member;
     }
     return [implode(" ", $question), (string)$correctAnswer];
 }
