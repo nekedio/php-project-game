@@ -4,7 +4,7 @@ namespace BrainGames\games\even;
 
 use function BrainGames\engine\engine;
 
-use const BrainGames\engine;
+use const BrainGames\engine\SETS_COUNT;
 
 function initGameEven()
 {
@@ -28,9 +28,5 @@ function getDataSetEven()
 
 function isEvenNumber($number)
 {
-    $even = 2;
-    if ($number % $even === 0) {
-        return true;
-    }
-    return false;
+    return $number % 2 === 0;
 }

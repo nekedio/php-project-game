@@ -4,7 +4,7 @@ namespace BrainGames\games\prime;
 
 use function BrainGames\engine\engine;
 
-use const BrainGames\engine;
+use const BrainGames\engine\SETS_COUNT;
 
 function initGamePrime()
 {

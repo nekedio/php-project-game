@@ -4,7 +4,7 @@ namespace BrainGames\games\progression;
 
 use function BrainGames\engine\engine;
 
-use const BrainGames\engine;
+use const BrainGames\engine\SETS_COUNT;
 
 function initGameProgression()
 {
@@ -14,14 +14,18 @@ function initGameProgression()
         $dataGame[] = getDataSetProgression();
     }
     engine($conditionGame, $dataGame);
-    getRandomProgression();
     return;
 }
 
 function getDataSetProgression()
 {
-    $progression = getRandomProgression();
-    $questionNumber = rand(0, count($progression) - 1);
+    $lengthProgression = 10;
+    $minDiff = 2;
+    $maxDiff = 4;
+    $diffProgression = rand($minDiff, $maxDiff);
+    $shiftProgression = rand(-5, 5);
+    $progression = getRandomProgression($lengthProgression, $diffProgression, $shiftProgression);
+    $questionNumber = array_rand($progression);
     $correctAnswer = $progression[$questionNumber];
     $question = [];
     foreach ($progression as $key => $member) {
@@ -34,16 +38,11 @@ function getDataSetProgression()
     return [implode(" ", $question), (string)$correctAnswer];
 }
 
-function getRandomProgression()
+function getRandomProgression($length, $diff, $shift)
 {
     $progression = [];
-    $lengthProgression = 10;
-    $minDiff = 2;
-    $maxDiff = 4;
-    $shiftProgression = rand(-5, 5);
-    $diff = rand($minDiff, $maxDiff);
-    for ($i = 0; $i < $lengthProgression; $i++) {
-        $progression[] = $diff * $i + $shiftProgression;
+    for ($i = 0; $i < $length; $i++) {
+        $progression[] = $diff * $i + $shift;
     }
     return $progression;
 }
