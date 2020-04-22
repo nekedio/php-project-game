@@ -1,5 +1,5 @@
 {
-    "name": "nekedio/php-project-lvl1",
+    "name": "nekedio/php-project-game",
     "description": "Project Brain Games",
     "bin": [
         "./bin/brain-even",
