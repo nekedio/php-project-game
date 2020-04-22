@@ -12,7 +12,7 @@
 ### Install globally via composer
 
 1. Install globally composer
-2. > composer global require nekedio/php-project-lvl1
+2. > composer global require nekedio/php-project-game
 
 [![asciicast](https://asciinema.org/a/305159.svg)](https://asciinema.org/a/305159)
 
