@@ -1,4 +1,4 @@
-# php-project-lvl1
+# php-project-game
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/d3929ac0baeeac57016e/maintainability)](https://codeclimate.com/github/nekedio/php-project-lvl1/maintainability)
 [![Build Status](https://travis-ci.com/nekedio/php-project-lvl1.svg?branch=master)](https://travis-ci.com/nekedio/php-project-lvl1)
